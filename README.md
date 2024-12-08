@@ -7,7 +7,7 @@ Por ahora funciona la carga de archivos a la memoria. Estoy trabajando en las fu
 
 **¿Por qué en C?**
 
-Como casi todo el código se basa en manipular memoria, el lenguaje C resulta mucho más intuitivo que otros de más alto nivel. Además, la placa RPi Pico puede ser programada en C/C++ usando el [SDK](https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html), que nos da mucho mejor control de los *timers* del microcontrolador. De esta forma, se puede hacer que cada operación dure lo que duraría en un HC11 de verdad. Si bien C++ proporciona librerías con estructuras de datos y algoritmos avanzados, me interesa implementar la búsqueda en C por mi cuenta.
+Como casi todo el código se basa en manipular memoria, el lenguaje C resulta mucho más intuitivo que otros de más alto nivel. Además, la placa RPi Pico puede ser programada en C/C++ usando el [SDK](https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html), que nos da mucho mejor control de los *timers* del microcontrolador. De esta forma, se puede hacer que cada operación dure lo que duraría en un HC11 de verdad. Si bien C++ proporciona librerías con estructuras de datos y algoritmos avanzados, no es muy complejo escribir el algoritmo de búsqueda que necesito. Por último pero no menos importante, aguante C (soy de Ing. Electrónica).
 
 **Código Python**
 
