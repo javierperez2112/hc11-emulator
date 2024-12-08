@@ -9,19 +9,26 @@ func = open("hc11_functions.txt", "w")
 inst.write(f"inst_t lookup[{len(dataframe)}]" + " = {\n")
 i = 0
 for row in dataframe.iloc():
-    mnem = row[0] + "_" + row[2]
+    mnem = row[0]
     if (i % 3) == 0:
         inst.write("\n\t")
-    inst.write("{ \"" + mnem + "\", " + "{0x" + str(row[1]) + "}, " + "&" + mnem + ", 1 }, ")
+    inst.write("{ \"" + mnem + "\", " + "{0x" + str(row[1]) + "}, " + "&" + mnem + ", &DIR_" + row[2] + ", 1 }, ")
     i = i + 1
 inst.write("\n};")
 
+prev = ""
 for row in dataframe.iloc():
-    mnem = row[0] + "_" + row[2]
-    func.write("void " + mnem + "(hc11_t*);\t// " + row[1] + "\n")
+    mnem = row[0]
+    if prev == mnem:
+        continue
+    prev = mnem
+    func.write("void " + mnem + "(hc11_t*, uint16_t (*)(hc11_t*));\n")
 
 func.write("\n\n\n")
 
 for row in dataframe.iloc():
-    mnem = row[0] + "_" + row[2]
-    func.write("\n\nvoid " + mnem + "(hc11_t *hc11)\t// " + row[1] + "\n{\n\n}")
+    mnem = row[0]
+    if prev == mnem:
+        continue
+    prev = mnem
+    func.write("\n\nvoid " + mnem + "(hc11_t *hc11, uint16_t (*arg)(hc11_t*))\n{\n\n}")

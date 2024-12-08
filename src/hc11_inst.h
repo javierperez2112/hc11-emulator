@@ -8,18 +8,19 @@
 
 typedef struct
 {
-	char *mnemonic;
+	char *mnemonic;						// Mnemonic (name)
 	union
 	{
-		uint16_t opcode;
+		uint16_t opcode;				// Opcode	
 		struct
 		{
-			uint16_t opcode_lsby : 8; // Least significant byte
-			uint16_t opcode_msby : 8; // Most significant byte
+			uint16_t opcode_lsby : 8;	// Least significant byte
+			uint16_t opcode_msby : 8;	// Most significant byte
 		};
 	};
-	void (*op)(hc11_t*);
-	uint8_t cycles;
+	void (*op)(hc11_t*, uint16_t (*)(hc11_t*));	// Operation function
+	uint16_t (*mode)(hc11_t*);					// Addressing mode function
+	uint8_t cycles;								// Cycles taken (see instruction table)
 } inst_t;	// Instruction data
 
 #endif // _HC11_INST_H
