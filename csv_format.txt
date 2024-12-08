@@ -1,0 +1,10 @@
+# DIRMODES -> CHAR
+# INH -> I
+# IMM -> M
+# EXT -> E
+# DIR -> D
+# IND,X -> X 
+# IND,Y -> Y
+# REL -> R
+
+MNEMONIC, OPCODE(HEX), DIRMODE
