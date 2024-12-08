@@ -12,10 +12,10 @@ for row in dataframe.iloc():
     mnem = row[0] + "_" + row[2]
     if (i % 3) == 0:
         inst.write("\n\t")
-    inst.write("{ \"" + mnem + "\", " + "0x" + str(row[1]) + ", " + "&" + mnem + " }, ")
+    inst.write("{ \"" + mnem + "\", " + "{0x" + str(row[1]) + "}, " + "&" + mnem + ", 1 }, ")
     i = i + 1
 inst.write("\n};")
 
 for row in dataframe.iloc():
     mnem = row[0] + "_" + row[2]
-    func.write("\n\nvoid " + mnem + "(void){\n\n\n}")
+    func.write("\n\nvoid " + mnem + "(hc11_t *hc11){\n\n\n}")

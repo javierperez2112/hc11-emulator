@@ -12,10 +12,10 @@ typedef struct
 	{
 		struct
 		{
-			uint8_t reg_a; // Register A
-			uint8_t reg_b; // Register B
+			uint8_t acc_a; // Accumulator A
+			uint8_t acc_b; // Accumulator B
 		};
-		uint16_t reg_d; // Register D (A|B)
+		uint16_t acc_d; // Accumulator D (A|B)
 	};
 	uint16_t ind_x; // Index X
 	uint16_t ind_y; // Index Y

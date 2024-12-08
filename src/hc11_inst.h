@@ -16,7 +16,7 @@ typedef struct
 			uint16_t opcode_msby : 8; // Most significant byte
 		};
 	};
-	void (*op)(void);
+	void (*op)(hc11_t*);
 	uint8_t cycles;
 } inst_t;
 
