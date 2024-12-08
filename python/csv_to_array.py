@@ -18,10 +18,10 @@ inst.write("\n};")
 
 for row in dataframe.iloc():
     mnem = row[0] + "_" + row[2]
-    func.write("void " + mnem + "(hc11_t*);\n")
+    func.write("void " + mnem + "(hc11_t*);\t// " + row[1] + "\n")
 
 func.write("\n\n\n")
 
 for row in dataframe.iloc():
     mnem = row[0] + "_" + row[2]
-    func.write("\n\nvoid " + mnem + "(hc11_t *hc11){\n\n\n}")
+    func.write("\n\nvoid " + mnem + "(hc11_t *hc11)\t// " + row[1] + "\n{\n\n}")

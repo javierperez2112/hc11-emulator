@@ -1,8 +1,10 @@
-#ifndef _H11_INST_H
+#ifndef _HC11_INST_H
 #define _HC11_INST_H
 
 #include <stdint.h>
 #include "hc11.h"
+
+#define LEVEL_SIZE 0x100
 
 typedef struct
 {
@@ -18,6 +20,6 @@ typedef struct
 	};
 	void (*op)(hc11_t*);
 	uint8_t cycles;
-} inst_t;
+} inst_t;	// Instruction data
 
 #endif // _HC11_INST_H
