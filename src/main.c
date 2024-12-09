@@ -38,5 +38,6 @@ int main(int argc, char **argv)
 	print_state(&HC11);
 	fclose(fptr);
 	end_mem(&HC11);
+	end_inst();
 	return 0;
 }

@@ -48,5 +48,6 @@ int load_mem(hc11_t *hc11, FILE *fileptr); // Load S19 into memory
 
 void init_inst(void);			// Initialize instruction search tree
 void exec_inst(hc11_t *hc11);	// Fetch-decode-execute one instruction
+void end_inst(void);			// Free search tree
 
 #endif // _HC11_H

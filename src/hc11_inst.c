@@ -298,6 +298,12 @@ void exec_inst(hc11_t *hc11)
 	(instruction->op)(hc11, instruction->mode);
 }
 
+void end_inst(void)
+{
+	end_tree(root);
+	root = NULL;
+}
+
 /* Dirmode definitions */
 
 arg_t DIR_I(hc11_t*)		// Inherent
