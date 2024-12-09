@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 	HC11.pc = 0x2000;
 	init_inst();
 	exec_inst(&HC11);
+	exec_inst(&HC11);
 	fclose(fptr);
 	end_mem(&HC11);
 	return 0;

@@ -3,7 +3,10 @@
 #include "hc11_search.h"
 #include <stdlib.h>
 
-// Dirmode declarations
+#define _DEBUG
+
+/* Dirmode declarations */
+
 arg_t DIR_I(hc11_t*);	// Inherent
 arg_t DIR_M(hc11_t*);	// Immediate
 arg_t DIR_E(hc11_t*);	// Extended
@@ -12,7 +15,7 @@ arg_t DIR_X(hc11_t*);	// Index X
 arg_t DIR_Y(hc11_t*);	// Index Y
 arg_t DIR_R(hc11_t*);	// Relative
 
-// Function declarations
+/* Function declarations */
 
 void ABA(hc11_t*, arg_t (*)(hc11_t*));
 void ABX(hc11_t*, arg_t (*)(hc11_t*));
@@ -287,7 +290,11 @@ void exec_inst(hc11_t *hc11)
 		exit(1);
 	}
 	inst_t *instruction = search_tree(hc11, root);
-	// printf("Executing %04X, PC = %04X\n", instruction->opcode, hc11->pc);
+	#ifdef _DEBUG
+	printf("---------------------------\n");
+	printf("Called: %s (%02X)\n", instruction->mnemonic, instruction->opcode);	// DEBUG
+	#endif
+	(void)instruction->mode(hc11);
 	(instruction->op)(hc11, instruction->mode);
 }
 
@@ -295,43 +302,57 @@ void exec_inst(hc11_t *hc11)
 
 arg_t DIR_I(hc11_t*)		// Inherent
 {
+	#ifdef _DEBUG
 	printf("Dirmode: INH\n");
+	#endif
 	return (arg_t){0, 0};	// Value doesn't matter!
 }
 
 arg_t DIR_M(hc11_t*)		// Immediate
 {
+	#ifdef _DEBUG
 	printf("Dirmode: IMM\n");
+	#endif
 	return (arg_t){0, 0};
 }
 
 arg_t DIR_E(hc11_t*)		// Extended
 {
+	#ifdef _DEBUG
 	printf("Dirmode: EXT\n");
+	#endif
 	return (arg_t){0, 0};
 }
 
 arg_t DIR_D(hc11_t*)		// Direct
 {
+	#ifdef _DEBUG
 	printf("Dirmode: DIR\n");
+	#endif
 	return (arg_t){0, 0};
 }
 
 arg_t DIR_X(hc11_t*)		// Index X
 {
+	#ifdef _DEBUG
 	printf("Dirmode: IND_X\n");
+	#endif
 	return (arg_t){0, 0};
 }
 
 arg_t DIR_Y(hc11_t*)		// Index Y
 {
+	#ifdef _DEBUG
 	printf("Dirmode: IND_Y\n");
+	#endif
 	return (arg_t){0, 0};
 }
 
 arg_t DIR_R(hc11_t*)		// Relative
 {
+	#ifdef _DEBUG
 	printf("Dirmode: REL\n");
+	#endif
 	return (arg_t){0, 0};
 }
 
@@ -719,8 +740,7 @@ void JSR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 
 void LDAA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
-	printf("Called LDAA!\n");
-	(void)arg(hc11);
+
 }
 
 void LDAB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
