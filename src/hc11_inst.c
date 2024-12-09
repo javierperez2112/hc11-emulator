@@ -5,6 +5,8 @@
 
 #define _DEBUG
 
+#pragma region DECLARATIONS
+
 /* Dirmode declarations */
 
 arg_t DIR_I(hc11_t*);	// Inherent
@@ -163,7 +165,9 @@ void WAI(hc11_t*, arg_t (*)(hc11_t*));
 void XGDX(hc11_t*, arg_t (*)(hc11_t*));
 void XGDY(hc11_t*, arg_t (*)(hc11_t*));
 
-/* Lookup table */
+#pragma endregion DECLARATIONS
+
+#pragma region LOOKUP
 
 inst_t lookup[316] = {		// Gracias Python por existir :p
 
@@ -275,6 +279,8 @@ inst_t lookup[316] = {		// Gracias Python por existir :p
 	{ "XGDY", {0x188F}, &XGDY, &DIR_I, 1 }, 
 };
 
+#pragma endregion LOOKUP
+
 static tree_level_t *root;
 
 void init_inst(void)
@@ -304,7 +310,7 @@ void end_inst(void)
 	root = NULL;
 }
 
-/* Dirmode definitions */
+#pragma region DIRMODE
 
 arg_t DIR_I(hc11_t*)		// Inherent
 {
@@ -362,7 +368,9 @@ arg_t DIR_R(hc11_t*)		// Relative
 	return (arg_t){0, 0};
 }
 
-/* Function definitions */
+#pragma endregion
+
+#pragma region FUNCS
 
 void ABA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
@@ -1088,3 +1096,5 @@ void XGDY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
+
+#pragma endregion FUNCS
