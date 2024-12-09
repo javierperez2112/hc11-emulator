@@ -4,161 +4,161 @@
 #include <stdlib.h>
 
 // Dirmode declarations
-uint16_t DIR_I(hc11_t*);	// Inherent
-uint16_t DIR_M(hc11_t*);	// Immediate
-uint16_t DIR_E(hc11_t*);	// Extended
-uint16_t DIR_D(hc11_t*);	// Direct
-uint16_t DIR_X(hc11_t*);	// Index X
-uint16_t DIR_Y(hc11_t*);	// Index Y
-uint16_t DIR_R(hc11_t*);	// Relative
+arg_t DIR_I(hc11_t*);	// Inherent
+arg_t DIR_M(hc11_t*);	// Immediate
+arg_t DIR_E(hc11_t*);	// Extended
+arg_t DIR_D(hc11_t*);	// Direct
+arg_t DIR_X(hc11_t*);	// Index X
+arg_t DIR_Y(hc11_t*);	// Index Y
+arg_t DIR_R(hc11_t*);	// Relative
 
 // Function declarations
 
-void ABA(hc11_t*, uint16_t (*)(hc11_t*));
-void ABX(hc11_t*, uint16_t (*)(hc11_t*));
-void ABY(hc11_t*, uint16_t (*)(hc11_t*));
-void ADCA(hc11_t*, uint16_t (*)(hc11_t*));
-void ADCB(hc11_t*, uint16_t (*)(hc11_t*));
-void ADDA(hc11_t*, uint16_t (*)(hc11_t*));
-void ADDB(hc11_t*, uint16_t (*)(hc11_t*));
-void ADDD(hc11_t*, uint16_t (*)(hc11_t*));
-void ANDA(hc11_t*, uint16_t (*)(hc11_t*));
-void ANDB(hc11_t*, uint16_t (*)(hc11_t*));
-void ASL(hc11_t*, uint16_t (*)(hc11_t*));
-void ASLA(hc11_t*, uint16_t (*)(hc11_t*));
-void ASLB(hc11_t*, uint16_t (*)(hc11_t*));
-void ASLD(hc11_t*, uint16_t (*)(hc11_t*));
-void ASR(hc11_t*, uint16_t (*)(hc11_t*));
-void ASRA(hc11_t*, uint16_t (*)(hc11_t*));
-void ASRB(hc11_t*, uint16_t (*)(hc11_t*));
-void BCC(hc11_t*, uint16_t (*)(hc11_t*));
-void BCLR(hc11_t*, uint16_t (*)(hc11_t*));
-void BCS(hc11_t*, uint16_t (*)(hc11_t*));
-void BEQ(hc11_t*, uint16_t (*)(hc11_t*));
-void BGE(hc11_t*, uint16_t (*)(hc11_t*));
-void BGT(hc11_t*, uint16_t (*)(hc11_t*));
-void BHI(hc11_t*, uint16_t (*)(hc11_t*));
-void BHS(hc11_t*, uint16_t (*)(hc11_t*));
-void BITA(hc11_t*, uint16_t (*)(hc11_t*));
-void BITB(hc11_t*, uint16_t (*)(hc11_t*));
-void BLE(hc11_t*, uint16_t (*)(hc11_t*));
-void BLO(hc11_t*, uint16_t (*)(hc11_t*));
-void BLS(hc11_t*, uint16_t (*)(hc11_t*));
-void BLT(hc11_t*, uint16_t (*)(hc11_t*));
-void BMI(hc11_t*, uint16_t (*)(hc11_t*));
-void BNE(hc11_t*, uint16_t (*)(hc11_t*));
-void BPL(hc11_t*, uint16_t (*)(hc11_t*));
-void BRA(hc11_t*, uint16_t (*)(hc11_t*));
-void BRCLR(hc11_t*, uint16_t (*)(hc11_t*));
-void BRN(hc11_t*, uint16_t (*)(hc11_t*));
-void BRSET(hc11_t*, uint16_t (*)(hc11_t*));
-void BSET(hc11_t*, uint16_t (*)(hc11_t*));
-void BSR(hc11_t*, uint16_t (*)(hc11_t*));
-void BVC(hc11_t*, uint16_t (*)(hc11_t*));
-void BVS(hc11_t*, uint16_t (*)(hc11_t*));
-void CBA(hc11_t*, uint16_t (*)(hc11_t*));
-void CLC(hc11_t*, uint16_t (*)(hc11_t*));
-void CLI(hc11_t*, uint16_t (*)(hc11_t*));
-void CLR(hc11_t*, uint16_t (*)(hc11_t*));
-void CLRA(hc11_t*, uint16_t (*)(hc11_t*));
-void CLRB(hc11_t*, uint16_t (*)(hc11_t*));
-void CLV(hc11_t*, uint16_t (*)(hc11_t*));
-void CMPA(hc11_t*, uint16_t (*)(hc11_t*));
-void CMPB(hc11_t*, uint16_t (*)(hc11_t*));
-void COM(hc11_t*, uint16_t (*)(hc11_t*));
-void COMA(hc11_t*, uint16_t (*)(hc11_t*));
-void COMB(hc11_t*, uint16_t (*)(hc11_t*));
-void CPD(hc11_t*, uint16_t (*)(hc11_t*));
-void CPX(hc11_t*, uint16_t (*)(hc11_t*));
-void CPY(hc11_t*, uint16_t (*)(hc11_t*));
-void DAA(hc11_t*, uint16_t (*)(hc11_t*));
-void DEC(hc11_t*, uint16_t (*)(hc11_t*));
-void DECA(hc11_t*, uint16_t (*)(hc11_t*));
-void DECB(hc11_t*, uint16_t (*)(hc11_t*));
-void DES(hc11_t*, uint16_t (*)(hc11_t*));
-void DEX(hc11_t*, uint16_t (*)(hc11_t*));
-void DEY(hc11_t*, uint16_t (*)(hc11_t*));
-void EORA(hc11_t*, uint16_t (*)(hc11_t*));
-void EORB(hc11_t*, uint16_t (*)(hc11_t*));
-void FDIV(hc11_t*, uint16_t (*)(hc11_t*));
-void IDIV(hc11_t*, uint16_t (*)(hc11_t*));
-void INC(hc11_t*, uint16_t (*)(hc11_t*));
-void INCA(hc11_t*, uint16_t (*)(hc11_t*));
-void INCB(hc11_t*, uint16_t (*)(hc11_t*));
-void INS(hc11_t*, uint16_t (*)(hc11_t*));
-void INX(hc11_t*, uint16_t (*)(hc11_t*));
-void INY(hc11_t*, uint16_t (*)(hc11_t*));
-void JMP(hc11_t*, uint16_t (*)(hc11_t*));
-void JSR(hc11_t*, uint16_t (*)(hc11_t*));
-void LDAA(hc11_t*, uint16_t (*)(hc11_t*));
-void LDAB(hc11_t*, uint16_t (*)(hc11_t*));
-void LDD(hc11_t*, uint16_t (*)(hc11_t*));
-void LDS(hc11_t*, uint16_t (*)(hc11_t*));
-void LDX(hc11_t*, uint16_t (*)(hc11_t*));
-void LDY(hc11_t*, uint16_t (*)(hc11_t*));
-void LSL(hc11_t*, uint16_t (*)(hc11_t*));
-void LSLA(hc11_t*, uint16_t (*)(hc11_t*));
-void LSLB(hc11_t*, uint16_t (*)(hc11_t*));
-void LSLD(hc11_t*, uint16_t (*)(hc11_t*));
-void LSR(hc11_t*, uint16_t (*)(hc11_t*));
-void LSRA(hc11_t*, uint16_t (*)(hc11_t*));
-void LSRB(hc11_t*, uint16_t (*)(hc11_t*));
-void LSRD(hc11_t*, uint16_t (*)(hc11_t*));
-void MUL(hc11_t*, uint16_t (*)(hc11_t*));
-void NEG(hc11_t*, uint16_t (*)(hc11_t*));
-void NEGA(hc11_t*, uint16_t (*)(hc11_t*));
-void NEGB(hc11_t*, uint16_t (*)(hc11_t*));
-void NOP(hc11_t*, uint16_t (*)(hc11_t*));
-void ORAA(hc11_t*, uint16_t (*)(hc11_t*));
-void ORAB(hc11_t*, uint16_t (*)(hc11_t*));
-void PSHA(hc11_t*, uint16_t (*)(hc11_t*));
-void PSHB(hc11_t*, uint16_t (*)(hc11_t*));
-void PSHX(hc11_t*, uint16_t (*)(hc11_t*));
-void PSHY(hc11_t*, uint16_t (*)(hc11_t*));
-void PULA(hc11_t*, uint16_t (*)(hc11_t*));
-void PULB(hc11_t*, uint16_t (*)(hc11_t*));
-void PULX(hc11_t*, uint16_t (*)(hc11_t*));
-void PULY(hc11_t*, uint16_t (*)(hc11_t*));
-void ROL(hc11_t*, uint16_t (*)(hc11_t*));
-void ROLA(hc11_t*, uint16_t (*)(hc11_t*));
-void ROLB(hc11_t*, uint16_t (*)(hc11_t*));
-void ROR(hc11_t*, uint16_t (*)(hc11_t*));
-void RORA(hc11_t*, uint16_t (*)(hc11_t*));
-void RORB(hc11_t*, uint16_t (*)(hc11_t*));
-void RTI(hc11_t*, uint16_t (*)(hc11_t*));
-void RTS(hc11_t*, uint16_t (*)(hc11_t*));
-void SBA(hc11_t*, uint16_t (*)(hc11_t*));
-void SBCA(hc11_t*, uint16_t (*)(hc11_t*));
-void SBCB(hc11_t*, uint16_t (*)(hc11_t*));
-void SEC(hc11_t*, uint16_t (*)(hc11_t*));
-void SEI(hc11_t*, uint16_t (*)(hc11_t*));
-void SEV(hc11_t*, uint16_t (*)(hc11_t*));
-void STAA(hc11_t*, uint16_t (*)(hc11_t*));
-void STAB(hc11_t*, uint16_t (*)(hc11_t*));
-void STD(hc11_t*, uint16_t (*)(hc11_t*));
-void STOP(hc11_t*, uint16_t (*)(hc11_t*));
-void STS(hc11_t*, uint16_t (*)(hc11_t*));
-void STX(hc11_t*, uint16_t (*)(hc11_t*));
-void STY(hc11_t*, uint16_t (*)(hc11_t*));
-void SUBA(hc11_t*, uint16_t (*)(hc11_t*));
-void SUBB(hc11_t*, uint16_t (*)(hc11_t*));
-void SUBD(hc11_t*, uint16_t (*)(hc11_t*));
-void SWI(hc11_t*, uint16_t (*)(hc11_t*));
-void TAB(hc11_t*, uint16_t (*)(hc11_t*));
-void TAP(hc11_t*, uint16_t (*)(hc11_t*));
-void TBA(hc11_t*, uint16_t (*)(hc11_t*));
-void TEST(hc11_t*, uint16_t (*)(hc11_t*));
-void TPA(hc11_t*, uint16_t (*)(hc11_t*));
-void TST(hc11_t*, uint16_t (*)(hc11_t*));
-void TSTA(hc11_t*, uint16_t (*)(hc11_t*));
-void TSTB(hc11_t*, uint16_t (*)(hc11_t*));
-void TSX(hc11_t*, uint16_t (*)(hc11_t*));
-void TSY(hc11_t*, uint16_t (*)(hc11_t*));
-void TXS(hc11_t*, uint16_t (*)(hc11_t*));
-void TYS(hc11_t*, uint16_t (*)(hc11_t*));
-void WAI(hc11_t*, uint16_t (*)(hc11_t*));
-void XGDX(hc11_t*, uint16_t (*)(hc11_t*));
-void XGDY(hc11_t*, uint16_t (*)(hc11_t*));
+void ABA(hc11_t*, arg_t (*)(hc11_t*));
+void ABX(hc11_t*, arg_t (*)(hc11_t*));
+void ABY(hc11_t*, arg_t (*)(hc11_t*));
+void ADCA(hc11_t*, arg_t (*)(hc11_t*));
+void ADCB(hc11_t*, arg_t (*)(hc11_t*));
+void ADDA(hc11_t*, arg_t (*)(hc11_t*));
+void ADDB(hc11_t*, arg_t (*)(hc11_t*));
+void ADDD(hc11_t*, arg_t (*)(hc11_t*));
+void ANDA(hc11_t*, arg_t (*)(hc11_t*));
+void ANDB(hc11_t*, arg_t (*)(hc11_t*));
+void ASL(hc11_t*, arg_t (*)(hc11_t*));
+void ASLA(hc11_t*, arg_t (*)(hc11_t*));
+void ASLB(hc11_t*, arg_t (*)(hc11_t*));
+void ASLD(hc11_t*, arg_t (*)(hc11_t*));
+void ASR(hc11_t*, arg_t (*)(hc11_t*));
+void ASRA(hc11_t*, arg_t (*)(hc11_t*));
+void ASRB(hc11_t*, arg_t (*)(hc11_t*));
+void BCC(hc11_t*, arg_t (*)(hc11_t*));
+void BCLR(hc11_t*, arg_t (*)(hc11_t*));
+void BCS(hc11_t*, arg_t (*)(hc11_t*));
+void BEQ(hc11_t*, arg_t (*)(hc11_t*));
+void BGE(hc11_t*, arg_t (*)(hc11_t*));
+void BGT(hc11_t*, arg_t (*)(hc11_t*));
+void BHI(hc11_t*, arg_t (*)(hc11_t*));
+void BHS(hc11_t*, arg_t (*)(hc11_t*));
+void BITA(hc11_t*, arg_t (*)(hc11_t*));
+void BITB(hc11_t*, arg_t (*)(hc11_t*));
+void BLE(hc11_t*, arg_t (*)(hc11_t*));
+void BLO(hc11_t*, arg_t (*)(hc11_t*));
+void BLS(hc11_t*, arg_t (*)(hc11_t*));
+void BLT(hc11_t*, arg_t (*)(hc11_t*));
+void BMI(hc11_t*, arg_t (*)(hc11_t*));
+void BNE(hc11_t*, arg_t (*)(hc11_t*));
+void BPL(hc11_t*, arg_t (*)(hc11_t*));
+void BRA(hc11_t*, arg_t (*)(hc11_t*));
+void BRCLR(hc11_t*, arg_t (*)(hc11_t*));
+void BRN(hc11_t*, arg_t (*)(hc11_t*));
+void BRSET(hc11_t*, arg_t (*)(hc11_t*));
+void BSET(hc11_t*, arg_t (*)(hc11_t*));
+void BSR(hc11_t*, arg_t (*)(hc11_t*));
+void BVC(hc11_t*, arg_t (*)(hc11_t*));
+void BVS(hc11_t*, arg_t (*)(hc11_t*));
+void CBA(hc11_t*, arg_t (*)(hc11_t*));
+void CLC(hc11_t*, arg_t (*)(hc11_t*));
+void CLI(hc11_t*, arg_t (*)(hc11_t*));
+void CLR(hc11_t*, arg_t (*)(hc11_t*));
+void CLRA(hc11_t*, arg_t (*)(hc11_t*));
+void CLRB(hc11_t*, arg_t (*)(hc11_t*));
+void CLV(hc11_t*, arg_t (*)(hc11_t*));
+void CMPA(hc11_t*, arg_t (*)(hc11_t*));
+void CMPB(hc11_t*, arg_t (*)(hc11_t*));
+void COM(hc11_t*, arg_t (*)(hc11_t*));
+void COMA(hc11_t*, arg_t (*)(hc11_t*));
+void COMB(hc11_t*, arg_t (*)(hc11_t*));
+void CPD(hc11_t*, arg_t (*)(hc11_t*));
+void CPX(hc11_t*, arg_t (*)(hc11_t*));
+void CPY(hc11_t*, arg_t (*)(hc11_t*));
+void DAA(hc11_t*, arg_t (*)(hc11_t*));
+void DEC(hc11_t*, arg_t (*)(hc11_t*));
+void DECA(hc11_t*, arg_t (*)(hc11_t*));
+void DECB(hc11_t*, arg_t (*)(hc11_t*));
+void DES(hc11_t*, arg_t (*)(hc11_t*));
+void DEX(hc11_t*, arg_t (*)(hc11_t*));
+void DEY(hc11_t*, arg_t (*)(hc11_t*));
+void EORA(hc11_t*, arg_t (*)(hc11_t*));
+void EORB(hc11_t*, arg_t (*)(hc11_t*));
+void FDIV(hc11_t*, arg_t (*)(hc11_t*));
+void IDIV(hc11_t*, arg_t (*)(hc11_t*));
+void INC(hc11_t*, arg_t (*)(hc11_t*));
+void INCA(hc11_t*, arg_t (*)(hc11_t*));
+void INCB(hc11_t*, arg_t (*)(hc11_t*));
+void INS(hc11_t*, arg_t (*)(hc11_t*));
+void INX(hc11_t*, arg_t (*)(hc11_t*));
+void INY(hc11_t*, arg_t (*)(hc11_t*));
+void JMP(hc11_t*, arg_t (*)(hc11_t*));
+void JSR(hc11_t*, arg_t (*)(hc11_t*));
+void LDAA(hc11_t*, arg_t (*)(hc11_t*));
+void LDAB(hc11_t*, arg_t (*)(hc11_t*));
+void LDD(hc11_t*, arg_t (*)(hc11_t*));
+void LDS(hc11_t*, arg_t (*)(hc11_t*));
+void LDX(hc11_t*, arg_t (*)(hc11_t*));
+void LDY(hc11_t*, arg_t (*)(hc11_t*));
+void LSL(hc11_t*, arg_t (*)(hc11_t*));
+void LSLA(hc11_t*, arg_t (*)(hc11_t*));
+void LSLB(hc11_t*, arg_t (*)(hc11_t*));
+void LSLD(hc11_t*, arg_t (*)(hc11_t*));
+void LSR(hc11_t*, arg_t (*)(hc11_t*));
+void LSRA(hc11_t*, arg_t (*)(hc11_t*));
+void LSRB(hc11_t*, arg_t (*)(hc11_t*));
+void LSRD(hc11_t*, arg_t (*)(hc11_t*));
+void MUL(hc11_t*, arg_t (*)(hc11_t*));
+void NEG(hc11_t*, arg_t (*)(hc11_t*));
+void NEGA(hc11_t*, arg_t (*)(hc11_t*));
+void NEGB(hc11_t*, arg_t (*)(hc11_t*));
+void NOP(hc11_t*, arg_t (*)(hc11_t*));
+void ORAA(hc11_t*, arg_t (*)(hc11_t*));
+void ORAB(hc11_t*, arg_t (*)(hc11_t*));
+void PSHA(hc11_t*, arg_t (*)(hc11_t*));
+void PSHB(hc11_t*, arg_t (*)(hc11_t*));
+void PSHX(hc11_t*, arg_t (*)(hc11_t*));
+void PSHY(hc11_t*, arg_t (*)(hc11_t*));
+void PULA(hc11_t*, arg_t (*)(hc11_t*));
+void PULB(hc11_t*, arg_t (*)(hc11_t*));
+void PULX(hc11_t*, arg_t (*)(hc11_t*));
+void PULY(hc11_t*, arg_t (*)(hc11_t*));
+void ROL(hc11_t*, arg_t (*)(hc11_t*));
+void ROLA(hc11_t*, arg_t (*)(hc11_t*));
+void ROLB(hc11_t*, arg_t (*)(hc11_t*));
+void ROR(hc11_t*, arg_t (*)(hc11_t*));
+void RORA(hc11_t*, arg_t (*)(hc11_t*));
+void RORB(hc11_t*, arg_t (*)(hc11_t*));
+void RTI(hc11_t*, arg_t (*)(hc11_t*));
+void RTS(hc11_t*, arg_t (*)(hc11_t*));
+void SBA(hc11_t*, arg_t (*)(hc11_t*));
+void SBCA(hc11_t*, arg_t (*)(hc11_t*));
+void SBCB(hc11_t*, arg_t (*)(hc11_t*));
+void SEC(hc11_t*, arg_t (*)(hc11_t*));
+void SEI(hc11_t*, arg_t (*)(hc11_t*));
+void SEV(hc11_t*, arg_t (*)(hc11_t*));
+void STAA(hc11_t*, arg_t (*)(hc11_t*));
+void STAB(hc11_t*, arg_t (*)(hc11_t*));
+void STD(hc11_t*, arg_t (*)(hc11_t*));
+void STOP(hc11_t*, arg_t (*)(hc11_t*));
+void STS(hc11_t*, arg_t (*)(hc11_t*));
+void STX(hc11_t*, arg_t (*)(hc11_t*));
+void STY(hc11_t*, arg_t (*)(hc11_t*));
+void SUBA(hc11_t*, arg_t (*)(hc11_t*));
+void SUBB(hc11_t*, arg_t (*)(hc11_t*));
+void SUBD(hc11_t*, arg_t (*)(hc11_t*));
+void SWI(hc11_t*, arg_t (*)(hc11_t*));
+void TAB(hc11_t*, arg_t (*)(hc11_t*));
+void TAP(hc11_t*, arg_t (*)(hc11_t*));
+void TBA(hc11_t*, arg_t (*)(hc11_t*));
+void TEST(hc11_t*, arg_t (*)(hc11_t*));
+void TPA(hc11_t*, arg_t (*)(hc11_t*));
+void TST(hc11_t*, arg_t (*)(hc11_t*));
+void TSTA(hc11_t*, arg_t (*)(hc11_t*));
+void TSTB(hc11_t*, arg_t (*)(hc11_t*));
+void TSX(hc11_t*, arg_t (*)(hc11_t*));
+void TSY(hc11_t*, arg_t (*)(hc11_t*));
+void TXS(hc11_t*, arg_t (*)(hc11_t*));
+void TYS(hc11_t*, arg_t (*)(hc11_t*));
+void WAI(hc11_t*, arg_t (*)(hc11_t*));
+void XGDX(hc11_t*, arg_t (*)(hc11_t*));
+void XGDY(hc11_t*, arg_t (*)(hc11_t*));
 
 /* Lookup table */
 
@@ -293,764 +293,772 @@ void exec_inst(hc11_t *hc11)
 
 /* Dirmode definitions */
 
-uint16_t DIR_I(hc11_t*)		// Inherent
+arg_t DIR_I(hc11_t*)		// Inherent
 {
-	return 0;	// Value doesn't matter!
+	printf("Dirmode: INH\n");
+	return (arg_t){0, 0};	// Value doesn't matter!
 }
 
-uint16_t DIR_M(hc11_t*)		// Immediate
+arg_t DIR_M(hc11_t*)		// Immediate
 {
-	return 0;
+	printf("Dirmode: IMM\n");
+	return (arg_t){0, 0};
 }
 
-uint16_t DIR_E(hc11_t*)		// Extended
+arg_t DIR_E(hc11_t*)		// Extended
 {
-	return 0;
+	printf("Dirmode: EXT\n");
+	return (arg_t){0, 0};
 }
 
-uint16_t DIR_D(hc11_t*)		// Direct
+arg_t DIR_D(hc11_t*)		// Direct
 {
-	return 0;
+	printf("Dirmode: DIR\n");
+	return (arg_t){0, 0};
 }
 
-uint16_t DIR_X(hc11_t*)		// Index X
+arg_t DIR_X(hc11_t*)		// Index X
 {
-	return 0;
+	printf("Dirmode: IND_X\n");
+	return (arg_t){0, 0};
 }
 
-uint16_t DIR_Y(hc11_t*)		// Index Y
+arg_t DIR_Y(hc11_t*)		// Index Y
 {
-	return 0;
+	printf("Dirmode: IND_Y\n");
+	return (arg_t){0, 0};
 }
 
-uint16_t DIR_R(hc11_t*)		// Relative
+arg_t DIR_R(hc11_t*)		// Relative
 {
-	return 0;
+	printf("Dirmode: REL\n");
+	return (arg_t){0, 0};
 }
 
 /* Function definitions */
 
-void ABA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ABA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ABX(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ABX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ABY(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ABY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ADCA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ADCA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ADCB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ADCB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ADDA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ADDA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ADDB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ADDB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ADDD(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ADDD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ANDA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ANDA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ANDB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ANDB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ASL(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ASL(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ASLA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ASLA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ASLB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ASLB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ASLD(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ASLD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ASR(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ASR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ASRA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ASRA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ASRB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ASRB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BCC(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BCC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BCLR(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BCLR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BCS(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BCS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BEQ(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BEQ(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BGE(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BGE(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BGT(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BGT(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BHI(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BHI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BHS(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BHS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BITA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BITA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BITB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BITB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BLE(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BLE(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BLO(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BLO(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BLS(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BLS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BLT(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BLT(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BMI(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BMI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BNE(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BNE(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BPL(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BPL(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BRA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BRA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BRCLR(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BRCLR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BRN(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BRN(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BRSET(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BRSET(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BSET(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BSET(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BSR(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BSR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BVC(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BVC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void BVS(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void BVS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CBA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CBA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CLC(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CLC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CLI(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CLI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CLR(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CLR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CLRA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CLRA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CLRB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CLRB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CLV(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CLV(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CMPA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CMPA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CMPB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CMPB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void COM(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void COM(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void COMA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void COMA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void COMB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void COMB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CPD(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CPD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CPX(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CPX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void CPY(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void CPY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void DAA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void DAA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void DEC(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void DEC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void DECA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void DECA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void DECB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void DECB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void DES(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void DES(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void DEX(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void DEX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void DEY(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void DEY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void EORA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void EORA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void EORB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void EORB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void FDIV(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void FDIV(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void IDIV(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void IDIV(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void INC(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void INC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void INCA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void INCA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void INCB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void INCB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void INS(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void INS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void INX(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void INX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void INY(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void INY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void JMP(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void JMP(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void JSR(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void JSR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LDAA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LDAA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
-
+	printf("Called LDAA!\n");
+	(void)arg(hc11);
 }
 
-void LDAB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LDAB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LDD(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LDD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LDS(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LDS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LDX(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LDX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LDY(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LDY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LSL(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LSL(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LSLA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LSLA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LSLB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LSLB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LSLD(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LSLD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LSR(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LSR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LSRA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LSRA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LSRB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LSRB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void LSRD(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void LSRD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void MUL(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void MUL(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void NEG(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void NEG(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void NEGA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void NEGA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void NEGB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void NEGB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void NOP(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void NOP(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ORAA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ORAA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ORAB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ORAB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void PSHA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void PSHA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void PSHB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void PSHB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void PSHX(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void PSHX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void PSHY(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void PSHY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void PULA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void PULA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void PULB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void PULB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void PULX(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void PULX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void PULY(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void PULY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ROL(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ROL(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ROLA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ROLA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ROLB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ROLB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void ROR(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void ROR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void RORA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void RORA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void RORB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void RORB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void RTI(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void RTI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void RTS(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void RTS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void SBA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void SBA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void SBCA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void SBCA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void SBCB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void SBCB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void SEC(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void SEC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void SEI(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void SEI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void SEV(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void SEV(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void STAA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void STAA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void STAB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void STAB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void STD(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void STD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void STOP(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void STOP(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void STS(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void STS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void STX(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void STX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void STY(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void STY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void SUBA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void SUBA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void SUBB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void SUBB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void SUBD(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void SUBD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void SWI(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void SWI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TAB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TAB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TAP(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TAP(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TBA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TBA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TEST(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TEST(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TPA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TPA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TST(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TST(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TSTA(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TSTA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TSTB(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TSTB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TSX(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TSX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TSY(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TSY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TXS(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TXS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void TYS(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void TYS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void WAI(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void WAI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void XGDX(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void XGDX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }
 
-void XGDY(hc11_t *hc11, uint16_t (*arg)(hc11_t*))
+void XGDY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
 {
 
 }

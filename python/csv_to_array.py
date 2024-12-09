@@ -22,7 +22,7 @@ for row in dataframe.iloc():
     if prev == mnem:
         continue
     prev = mnem
-    func.write("void " + mnem + "(hc11_t*, uint16_t (*)(hc11_t*));\n")
+    func.write("void " + mnem + "(hc11_t*, arg_t (*)(hc11_t*));\n")
 
 func.write("\n\n\n")
 
@@ -31,4 +31,4 @@ for row in dataframe.iloc():
     if prev == mnem:
         continue
     prev = mnem
-    func.write("\n\nvoid " + mnem + "(hc11_t *hc11, uint16_t (*arg)(hc11_t*))\n{\n\n}")
+    func.write("\n\nvoid " + mnem + "(hc11_t *hc11, arg_t (*arg)(hc11_t*))\n{\n\n}")

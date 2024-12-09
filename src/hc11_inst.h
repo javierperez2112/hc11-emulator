@@ -8,6 +8,13 @@
 
 typedef struct
 {
+	uint8_t value;
+	uint16_t address;
+} arg_t;	// Return value for addressing mode functions
+
+
+typedef struct
+{
 	char *mnemonic;						// Mnemonic (name)
 	union
 	{
@@ -18,8 +25,8 @@ typedef struct
 			uint16_t opcode_msby : 8;	// Most significant byte
 		};
 	};
-	void (*op)(hc11_t*, uint16_t (*)(hc11_t*));	// Operation function
-	uint16_t (*mode)(hc11_t*);					// Addressing mode function
+	void (*op)(hc11_t*, arg_t (*)(hc11_t*));	// Operation function
+	arg_t (*mode)(hc11_t*);					// Addressing mode function
 	uint8_t cycles;								// Cycles taken (see instruction table)
 } inst_t;	// Instruction data
 
