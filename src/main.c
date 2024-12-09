@@ -4,6 +4,12 @@
 
 /* THIS FILE IS ONLY FOR TESTING PURPOSES!!! */
 
+void print_state(hc11_t *hc11)
+{
+	printf("---------------------------\n");
+	printf("ACC_A: %02X\nACC_B: %02X\nPC: %04X\n", hc11->acc_a, hc11->acc_b, hc11->pc);
+}
+
 int main(int argc, char **argv)
 {
 	hc11_t HC11;
@@ -25,8 +31,11 @@ int main(int argc, char **argv)
 	*/
 	HC11.pc = 0x2000;
 	init_inst();
+	print_state(&HC11);
 	exec_inst(&HC11);
+	print_state(&HC11);
 	exec_inst(&HC11);
+	print_state(&HC11);
 	fclose(fptr);
 	end_mem(&HC11);
 	return 0;
