@@ -1,6 +1,7 @@
 #include "hc11.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/resource.h>
 
 /* THIS FILE IS ONLY FOR TESTING PURPOSES!!! */
 
@@ -10,8 +11,16 @@ void print_state(hc11_t *hc11)
 	printf("ACC_A: %02X\nACC_B: %02X\nPC: %04X\n", hc11->acc_a, hc11->acc_b, hc11->pc);
 }
 
+long get_mem_usage()
+{
+	struct rusage my_usage;
+	getrusage(RUSAGE_SELF, &my_usage);
+	return my_usage.ru_maxrss;
+}
+
 int main(int argc, char **argv)
 {
+	printf("# DEBUG #\n");
 	hc11_t HC11;
 	int m = init_mem(&HC11);
 	printf("HC11 memory: %d bytes\n", m);
@@ -36,6 +45,7 @@ int main(int argc, char **argv)
 	print_state(&HC11);
 	exec_inst(&HC11);
 	print_state(&HC11);
+	printf("Usage: %ld\n", get_mem_usage());
 	fclose(fptr);
 	end_mem(&HC11);
 	end_inst();

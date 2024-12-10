@@ -1,4 +1,10 @@
 src/main
+Makefile
+makefile
 hc11_functions.txt
 hc11_instructions.txt
 .vscode
+build/
+CMake*
+cmake*
+!CMakeLists.txt
