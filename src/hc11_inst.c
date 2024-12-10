@@ -9,161 +9,161 @@
 
 /* Dirmode declarations */
 
-arg_t DIR_I(hc11_t*);	// Inherent
-arg_t DIR_M(hc11_t*);	// Immediate
-arg_t DIR_E(hc11_t*);	// Extended
-arg_t DIR_D(hc11_t*);	// Direct
-arg_t DIR_X(hc11_t*);	// Index X
-arg_t DIR_Y(hc11_t*);	// Index Y
-arg_t DIR_R(hc11_t*);	// Relative
+arg_t DIR_I(hc11_t*, size_t);	// Inherent
+arg_t DIR_M(hc11_t*, size_t);	// Immediate
+arg_t DIR_E(hc11_t*, size_t);	// Extended
+arg_t DIR_D(hc11_t*, size_t);	// Direct
+arg_t DIR_X(hc11_t*, size_t);	// Index X
+arg_t DIR_Y(hc11_t*, size_t);	// Index Y
+arg_t DIR_R(hc11_t*, size_t);	// Relative
 
 /* Function declarations */
 
-void ABA(hc11_t*, arg_t (*)(hc11_t*));
-void ABX(hc11_t*, arg_t (*)(hc11_t*));
-void ABY(hc11_t*, arg_t (*)(hc11_t*));
-void ADCA(hc11_t*, arg_t (*)(hc11_t*));
-void ADCB(hc11_t*, arg_t (*)(hc11_t*));
-void ADDA(hc11_t*, arg_t (*)(hc11_t*));
-void ADDB(hc11_t*, arg_t (*)(hc11_t*));
-void ADDD(hc11_t*, arg_t (*)(hc11_t*));
-void ANDA(hc11_t*, arg_t (*)(hc11_t*));
-void ANDB(hc11_t*, arg_t (*)(hc11_t*));
-void ASL(hc11_t*, arg_t (*)(hc11_t*));
-void ASLA(hc11_t*, arg_t (*)(hc11_t*));
-void ASLB(hc11_t*, arg_t (*)(hc11_t*));
-void ASLD(hc11_t*, arg_t (*)(hc11_t*));
-void ASR(hc11_t*, arg_t (*)(hc11_t*));
-void ASRA(hc11_t*, arg_t (*)(hc11_t*));
-void ASRB(hc11_t*, arg_t (*)(hc11_t*));
-void BCC(hc11_t*, arg_t (*)(hc11_t*));
-void BCLR(hc11_t*, arg_t (*)(hc11_t*));
-void BCS(hc11_t*, arg_t (*)(hc11_t*));
-void BEQ(hc11_t*, arg_t (*)(hc11_t*));
-void BGE(hc11_t*, arg_t (*)(hc11_t*));
-void BGT(hc11_t*, arg_t (*)(hc11_t*));
-void BHI(hc11_t*, arg_t (*)(hc11_t*));
-void BHS(hc11_t*, arg_t (*)(hc11_t*));
-void BITA(hc11_t*, arg_t (*)(hc11_t*));
-void BITB(hc11_t*, arg_t (*)(hc11_t*));
-void BLE(hc11_t*, arg_t (*)(hc11_t*));
-void BLO(hc11_t*, arg_t (*)(hc11_t*));
-void BLS(hc11_t*, arg_t (*)(hc11_t*));
-void BLT(hc11_t*, arg_t (*)(hc11_t*));
-void BMI(hc11_t*, arg_t (*)(hc11_t*));
-void BNE(hc11_t*, arg_t (*)(hc11_t*));
-void BPL(hc11_t*, arg_t (*)(hc11_t*));
-void BRA(hc11_t*, arg_t (*)(hc11_t*));
-void BRCLR(hc11_t*, arg_t (*)(hc11_t*));
-void BRN(hc11_t*, arg_t (*)(hc11_t*));
-void BRSET(hc11_t*, arg_t (*)(hc11_t*));
-void BSET(hc11_t*, arg_t (*)(hc11_t*));
-void BSR(hc11_t*, arg_t (*)(hc11_t*));
-void BVC(hc11_t*, arg_t (*)(hc11_t*));
-void BVS(hc11_t*, arg_t (*)(hc11_t*));
-void CBA(hc11_t*, arg_t (*)(hc11_t*));
-void CLC(hc11_t*, arg_t (*)(hc11_t*));
-void CLI(hc11_t*, arg_t (*)(hc11_t*));
-void CLR(hc11_t*, arg_t (*)(hc11_t*));
-void CLRA(hc11_t*, arg_t (*)(hc11_t*));
-void CLRB(hc11_t*, arg_t (*)(hc11_t*));
-void CLV(hc11_t*, arg_t (*)(hc11_t*));
-void CMPA(hc11_t*, arg_t (*)(hc11_t*));
-void CMPB(hc11_t*, arg_t (*)(hc11_t*));
-void COM(hc11_t*, arg_t (*)(hc11_t*));
-void COMA(hc11_t*, arg_t (*)(hc11_t*));
-void COMB(hc11_t*, arg_t (*)(hc11_t*));
-void CPD(hc11_t*, arg_t (*)(hc11_t*));
-void CPX(hc11_t*, arg_t (*)(hc11_t*));
-void CPY(hc11_t*, arg_t (*)(hc11_t*));
-void DAA(hc11_t*, arg_t (*)(hc11_t*));
-void DEC(hc11_t*, arg_t (*)(hc11_t*));
-void DECA(hc11_t*, arg_t (*)(hc11_t*));
-void DECB(hc11_t*, arg_t (*)(hc11_t*));
-void DES(hc11_t*, arg_t (*)(hc11_t*));
-void DEX(hc11_t*, arg_t (*)(hc11_t*));
-void DEY(hc11_t*, arg_t (*)(hc11_t*));
-void EORA(hc11_t*, arg_t (*)(hc11_t*));
-void EORB(hc11_t*, arg_t (*)(hc11_t*));
-void FDIV(hc11_t*, arg_t (*)(hc11_t*));
-void IDIV(hc11_t*, arg_t (*)(hc11_t*));
-void INC(hc11_t*, arg_t (*)(hc11_t*));
-void INCA(hc11_t*, arg_t (*)(hc11_t*));
-void INCB(hc11_t*, arg_t (*)(hc11_t*));
-void INS(hc11_t*, arg_t (*)(hc11_t*));
-void INX(hc11_t*, arg_t (*)(hc11_t*));
-void INY(hc11_t*, arg_t (*)(hc11_t*));
-void JMP(hc11_t*, arg_t (*)(hc11_t*));
-void JSR(hc11_t*, arg_t (*)(hc11_t*));
-void LDAA(hc11_t*, arg_t (*)(hc11_t*));
-void LDAB(hc11_t*, arg_t (*)(hc11_t*));
-void LDD(hc11_t*, arg_t (*)(hc11_t*));
-void LDS(hc11_t*, arg_t (*)(hc11_t*));
-void LDX(hc11_t*, arg_t (*)(hc11_t*));
-void LDY(hc11_t*, arg_t (*)(hc11_t*));
-void LSL(hc11_t*, arg_t (*)(hc11_t*));
-void LSLA(hc11_t*, arg_t (*)(hc11_t*));
-void LSLB(hc11_t*, arg_t (*)(hc11_t*));
-void LSLD(hc11_t*, arg_t (*)(hc11_t*));
-void LSR(hc11_t*, arg_t (*)(hc11_t*));
-void LSRA(hc11_t*, arg_t (*)(hc11_t*));
-void LSRB(hc11_t*, arg_t (*)(hc11_t*));
-void LSRD(hc11_t*, arg_t (*)(hc11_t*));
-void MUL(hc11_t*, arg_t (*)(hc11_t*));
-void NEG(hc11_t*, arg_t (*)(hc11_t*));
-void NEGA(hc11_t*, arg_t (*)(hc11_t*));
-void NEGB(hc11_t*, arg_t (*)(hc11_t*));
-void NOP(hc11_t*, arg_t (*)(hc11_t*));
-void ORAA(hc11_t*, arg_t (*)(hc11_t*));
-void ORAB(hc11_t*, arg_t (*)(hc11_t*));
-void PSHA(hc11_t*, arg_t (*)(hc11_t*));
-void PSHB(hc11_t*, arg_t (*)(hc11_t*));
-void PSHX(hc11_t*, arg_t (*)(hc11_t*));
-void PSHY(hc11_t*, arg_t (*)(hc11_t*));
-void PULA(hc11_t*, arg_t (*)(hc11_t*));
-void PULB(hc11_t*, arg_t (*)(hc11_t*));
-void PULX(hc11_t*, arg_t (*)(hc11_t*));
-void PULY(hc11_t*, arg_t (*)(hc11_t*));
-void ROL(hc11_t*, arg_t (*)(hc11_t*));
-void ROLA(hc11_t*, arg_t (*)(hc11_t*));
-void ROLB(hc11_t*, arg_t (*)(hc11_t*));
-void ROR(hc11_t*, arg_t (*)(hc11_t*));
-void RORA(hc11_t*, arg_t (*)(hc11_t*));
-void RORB(hc11_t*, arg_t (*)(hc11_t*));
-void RTI(hc11_t*, arg_t (*)(hc11_t*));
-void RTS(hc11_t*, arg_t (*)(hc11_t*));
-void SBA(hc11_t*, arg_t (*)(hc11_t*));
-void SBCA(hc11_t*, arg_t (*)(hc11_t*));
-void SBCB(hc11_t*, arg_t (*)(hc11_t*));
-void SEC(hc11_t*, arg_t (*)(hc11_t*));
-void SEI(hc11_t*, arg_t (*)(hc11_t*));
-void SEV(hc11_t*, arg_t (*)(hc11_t*));
-void STAA(hc11_t*, arg_t (*)(hc11_t*));
-void STAB(hc11_t*, arg_t (*)(hc11_t*));
-void STD(hc11_t*, arg_t (*)(hc11_t*));
-void STOP(hc11_t*, arg_t (*)(hc11_t*));
-void STS(hc11_t*, arg_t (*)(hc11_t*));
-void STX(hc11_t*, arg_t (*)(hc11_t*));
-void STY(hc11_t*, arg_t (*)(hc11_t*));
-void SUBA(hc11_t*, arg_t (*)(hc11_t*));
-void SUBB(hc11_t*, arg_t (*)(hc11_t*));
-void SUBD(hc11_t*, arg_t (*)(hc11_t*));
-void SWI(hc11_t*, arg_t (*)(hc11_t*));
-void TAB(hc11_t*, arg_t (*)(hc11_t*));
-void TAP(hc11_t*, arg_t (*)(hc11_t*));
-void TBA(hc11_t*, arg_t (*)(hc11_t*));
-void TEST(hc11_t*, arg_t (*)(hc11_t*));
-void TPA(hc11_t*, arg_t (*)(hc11_t*));
-void TST(hc11_t*, arg_t (*)(hc11_t*));
-void TSTA(hc11_t*, arg_t (*)(hc11_t*));
-void TSTB(hc11_t*, arg_t (*)(hc11_t*));
-void TSX(hc11_t*, arg_t (*)(hc11_t*));
-void TSY(hc11_t*, arg_t (*)(hc11_t*));
-void TXS(hc11_t*, arg_t (*)(hc11_t*));
-void TYS(hc11_t*, arg_t (*)(hc11_t*));
-void WAI(hc11_t*, arg_t (*)(hc11_t*));
-void XGDX(hc11_t*, arg_t (*)(hc11_t*));
-void XGDY(hc11_t*, arg_t (*)(hc11_t*));
+void ABA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ABX(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ABY(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ADCA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ADCB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ADDA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ADDB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ADDD(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ANDA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ANDB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ASL(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ASLA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ASLB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ASLD(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ASR(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ASRA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ASRB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BCC(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BCLR(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BCS(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BEQ(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BGE(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BGT(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BHI(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BHS(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BITA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BITB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BLE(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BLO(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BLS(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BLT(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BMI(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BNE(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BPL(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BRA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BRCLR(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BRN(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BRSET(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BSET(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BSR(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BVC(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void BVS(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CBA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CLC(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CLI(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CLR(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CLRA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CLRB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CLV(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CMPA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CMPB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void COM(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void COMA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void COMB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CPD(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CPX(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void CPY(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void DAA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void DEC(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void DECA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void DECB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void DES(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void DEX(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void DEY(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void EORA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void EORB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void FDIV(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void IDIV(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void INC(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void INCA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void INCB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void INS(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void INX(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void INY(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void JMP(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void JSR(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LDAA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LDAB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LDD(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LDS(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LDX(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LDY(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LSL(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LSLA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LSLB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LSLD(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LSR(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LSRA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LSRB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void LSRD(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void MUL(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void NEG(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void NEGA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void NEGB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void NOP(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ORAA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ORAB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void PSHA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void PSHB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void PSHX(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void PSHY(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void PULA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void PULB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void PULX(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void PULY(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ROL(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ROLA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ROLB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void ROR(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void RORA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void RORB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void RTI(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void RTS(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void SBA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void SBCA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void SBCB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void SEC(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void SEI(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void SEV(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void STAA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void STAB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void STD(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void STOP(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void STS(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void STX(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void STY(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void SUBA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void SUBB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void SUBD(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void SWI(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TAB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TAP(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TBA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TEST(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TPA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TST(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TSTA(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TSTB(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TSX(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TSY(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TXS(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void TYS(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void WAI(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void XGDX(hc11_t*, arg_t (*)(hc11_t*, size_t));
+void XGDY(hc11_t*, arg_t (*)(hc11_t*, size_t));
 
 #pragma endregion DECLARATIONS
 
@@ -300,7 +300,6 @@ void exec_inst(hc11_t *hc11)
 	printf("---------------------------\n");
 	printf("Called: %s (%02X)\n", instruction->mnemonic, instruction->opcode);	// DEBUG
 	#endif
-	(void)instruction->mode(hc11);
 	(instruction->op)(hc11, instruction->mode);
 }
 
@@ -312,787 +311,818 @@ void end_inst(void)
 
 #pragma region DIRMODE
 
-arg_t DIR_I(hc11_t*)		// Inherent
+arg_t DIR_I(hc11_t *hc11, size_t n)	// Inherent
 {
 	#ifdef _DEBUG
 	printf("Dirmode: INH\n");
 	#endif
-	return (arg_t){0, 0};	// Value doesn't matter!
+	return (arg_t)0;	// Value doesn't matter!
 }
 
-arg_t DIR_M(hc11_t*)		// Immediate
+arg_t DIR_M(hc11_t *hc11, size_t n)	// Immediate
 {
 	#ifdef _DEBUG
 	printf("Dirmode: IMM\n");
 	#endif
-	return (arg_t){0, 0};
+	arg_t ret = (arg_t)0;
+	if(n == 1)
+	{
+		ret = hc11->memory[hc11->pc++];
+	}
+	if(n == 2)
+	{
+		ret = hc11->memory[hc11->pc++] << 8;
+		ret += hc11->memory[hc11->pc++];
+	}
+	return ret;
 }
 
-arg_t DIR_E(hc11_t*)		// Extended
+arg_t DIR_E(hc11_t *hc11, size_t n)	// Extended
 {
 	#ifdef _DEBUG
 	printf("Dirmode: EXT\n");
 	#endif
-	return (arg_t){0, 0};
+	arg_t ret = hc11->memory[hc11->pc++] << 8;
+	ret += hc11->memory[hc11->pc++];
+	return ret;
 }
 
-arg_t DIR_D(hc11_t*)		// Direct
+arg_t DIR_D(hc11_t *hc11, size_t n)	// Direct
 {
 	#ifdef _DEBUG
 	printf("Dirmode: DIR\n");
 	#endif
-	return (arg_t){0, 0};
+	arg_t ret = hc11->memory[hc11->pc++];
+	return ret;
 }
 
-arg_t DIR_X(hc11_t*)		// Index X
+arg_t DIR_X(hc11_t *hc11, size_t n)	// Index X
 {
 	#ifdef _DEBUG
 	printf("Dirmode: IND_X\n");
 	#endif
-	return (arg_t){0, 0};
+	arg_t ret = (arg_t)0;
+	uint8_t ind = hc11->memory[hc11->pc++];
+	ret = hc11->ind_x + ind;
+	return ret;
 }
 
-arg_t DIR_Y(hc11_t*)		// Index Y
+arg_t DIR_Y(hc11_t *hc11, size_t n)	// Index Y
 {
 	#ifdef _DEBUG
 	printf("Dirmode: IND_Y\n");
 	#endif
-	return (arg_t){0, 0};
+	arg_t ret = (arg_t)0;
+	uint8_t ind = hc11->memory[hc11->pc++];
+	ret = hc11->ind_y + ind;
+	return ret;
 }
 
-arg_t DIR_R(hc11_t*)		// Relative
+arg_t DIR_R(hc11_t *hc11, size_t n)	// Relative
 {
 	#ifdef _DEBUG
 	printf("Dirmode: REL\n");
 	#endif
-	return (arg_t){0, 0};
+	arg_t ret = (arg_t)0;
+	if(n == 1)
+	{
+		int8_t jump = (int8_t)hc11->memory[hc11->pc++];
+		ret = jump;
+	}
+	if(n == 2)
+	{
+		uint16_t jump = hc11->memory[hc11->pc++] << 8;
+		jump += hc11->memory[hc11->pc++];
+		ret = jump;
+	}
+	return ret;
 }
 
 #pragma endregion
 
 #pragma region FUNCS
 
-void ABA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ABA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ABX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ABX(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 	
 }
 
-void ABY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ABY(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ADCA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ADCA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ADCB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ADCB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ADDA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ADDA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ADDB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ADDB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ADDD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ADDD(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ANDA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ANDA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ANDB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ANDB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ASL(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ASL(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ASLA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ASLA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ASLB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ASLB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ASLD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ASLD(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ASR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ASR(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ASRA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ASRA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ASRB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ASRB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BCC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BCC(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BCLR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BCLR(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BCS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BCS(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BEQ(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BEQ(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BGE(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BGE(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BGT(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BGT(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BHI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BHI(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BHS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BHS(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BITA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BITA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BITB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BITB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BLE(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BLE(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BLO(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BLO(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BLS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BLS(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BLT(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BLT(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BMI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BMI(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BNE(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BNE(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BPL(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BPL(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BRA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BRA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BRCLR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BRCLR(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BRN(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BRN(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BRSET(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BRSET(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BSET(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BSET(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BSR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BSR(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BVC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BVC(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void BVS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void BVS(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CBA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CBA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CLC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CLC(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CLI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CLI(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CLR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CLR(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CLRA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CLRA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CLRB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CLRB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CLV(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CLV(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CMPA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CMPA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CMPB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CMPB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void COM(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void COM(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void COMA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void COMA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void COMB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void COMB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CPD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CPD(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CPX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CPX(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void CPY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void CPY(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void DAA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void DAA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void DEC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void DEC(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void DECA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void DECA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void DECB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void DECB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void DES(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void DES(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void DEX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void DEX(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void DEY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void DEY(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void EORA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void EORA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void EORB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void EORB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void FDIV(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void FDIV(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void IDIV(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void IDIV(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void INC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void INC(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void INCA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void INCA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void INCB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void INCB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void INS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void INS(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void INX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void INX(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void INY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void INY(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void JMP(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void JMP(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void JSR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void JSR(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LDAA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LDAA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
-
+	hc11->acc_a = arg(hc11, 1);	// Testing...
 }
 
-void LDAB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LDAB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LDD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LDD(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LDS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LDS(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LDX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LDX(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LDY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LDY(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LSL(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LSL(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LSLA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LSLA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LSLB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LSLB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LSLD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LSLD(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LSR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LSR(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LSRA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LSRA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LSRB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LSRB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void LSRD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void LSRD(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void MUL(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void MUL(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void NEG(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void NEG(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void NEGA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void NEGA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void NEGB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void NEGB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void NOP(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void NOP(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ORAA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ORAA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ORAB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ORAB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void PSHA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void PSHA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void PSHB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void PSHB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void PSHX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void PSHX(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void PSHY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void PSHY(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void PULA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void PULA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void PULB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void PULB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void PULX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void PULX(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void PULY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void PULY(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ROL(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ROL(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ROLA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ROLA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ROLB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ROLB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void ROR(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void ROR(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void RORA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void RORA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void RORB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void RORB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void RTI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void RTI(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void RTS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void RTS(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void SBA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void SBA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void SBCA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void SBCA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void SBCB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void SBCB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void SEC(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void SEC(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void SEI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void SEI(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void SEV(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void SEV(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void STAA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void STAA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void STAB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void STAB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void STD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void STD(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void STOP(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void STOP(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void STS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void STS(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void STX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void STX(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void STY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void STY(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void SUBA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void SUBA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void SUBB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void SUBB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void SUBD(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void SUBD(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void SWI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void SWI(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TAB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TAB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TAP(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TAP(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TBA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TBA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TEST(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TEST(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TPA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TPA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TST(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TST(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TSTA(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TSTA(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TSTB(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TSTB(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TSX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TSX(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TSY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TSY(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TXS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TXS(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void TYS(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void TYS(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void WAI(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void WAI(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void XGDX(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void XGDX(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
 
-void XGDY(hc11_t *hc11, arg_t (*arg)(hc11_t*))
+void XGDY(hc11_t *hc11, arg_t (*arg)(hc11_t*, size_t))
 {
 
 }
