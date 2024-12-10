@@ -12,3 +12,6 @@ Como casi todo el código se basa en manipular memoria, el lenguaje C resulta mu
 **Código Python**
 
 El script en Python está para generar el arreglo de ```inst_t``` y el boilerplate de las funciones para la parte de *instrucciones*. La idea es que sea relativamente simple adaptar el código a otro procesador. Queda hacer que el script genere el texto completo, pero es úitl tenerlo así como está.
+
+**Notas**
+Para borrar todo lo listado en *.gitignore*: ```git clean -fdX```
